@@ -73,7 +73,6 @@ const ProductListScreen = () => {
     return "valid";
   };
 
-  // ✅ New function to request permission & show notifications
   const showExpiryNotifications = async (productsList) => {
     if (!("Notification" in window)) {
       console.warn("Browser notifications not supported.");
@@ -156,7 +155,7 @@ const ProductListScreen = () => {
               <Text>Price: ${item.price}</Text>
               <Text>Expiry Date: {item.expiryDate}</Text>
 
-              <TouchableOpacity onPress={() => router.push(`/editProduct/${item.id}`)}>
+              <TouchableOpacity onPress={() => router.push(`/screens/EditProductScreen?id=${item.id}`)}>
                 <Text style={styles.editText}>✏️ Edit</Text>
               </TouchableOpacity>
 
